@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MovieCardComponent from "./MovieCard";
+import { Spinner} from 'reactstrap'
 import matrixImage from "../media/matrix.jpg";
 import titanicImage from "../media/titanic.png";
 
@@ -41,20 +42,31 @@ class Movies extends Component {
 
   // FUncion recorre todos los elementos del axios
   renderMovies() {
-    const moviesList = this.state.movies.map( (item, i) => {
-      return (
-        <MovieCardComponent
-        key={i}
-          title={item.titulo}
-          image={item.image}
-          year={item.year}
-          duration={item.duracion}
-          genre={item.genero}
-          sinopsis={item.sinopsis}
-        ></MovieCardComponent>
-      );
-    });
-    return moviesList;
+if (this.state.movies.length === 0) {
+  return (
+<div>
+<Spinner animation="border" variant="primary"></Spinner>
+<Spinner animation="border" variant="secondary"></Spinner>
+<Spinner animation="border" variant="success"></Spinner>
+<Spinner animation="border" variant="danger"></Spinner>
+</div>
+  )
+} else {
+  const moviesList = this.state.movies.map( (item, i) => {
+    return (
+      <MovieCardComponent
+      key={i}
+        title={item.titulo}
+        image={item.image}
+        year={item.year}
+        duration={item.duracion}
+        genre={item.genero}
+        sinopsis={item.sinopsis}
+      ></MovieCardComponent>
+    );
+  });
+  return moviesList;
+}
   }
 
   render() {

@@ -117,9 +117,8 @@ class FormComponent extends Component {
   render() {
     return (
       <div
-        className="col-12 mr-auto ml-auto"
+        className="col-8 mr-auto ml-auto"
         style={{
-          fontFamily: "Montserrat-ExtraBoldItalic",
           fontSize: "0.85em",
           marginTop: "15px",
           marginBottom: "35px"
