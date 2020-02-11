@@ -41,9 +41,10 @@ class Movies extends Component {
 
   // FUncion recorre todos los elementos del axios
   renderMovies() {
-    const moviesList = this.state.movies.map((item, i) => {
+    const moviesList = this.state.movies.map( (item, i) => {
       return (
         <MovieCardComponent
+        key={i}
           title={item.titulo}
           image={item.image}
           year={item.year}
@@ -63,23 +64,7 @@ class Movies extends Component {
         style={{ border: "1px dashed" }}
       >
       {this.renderMovies()}
-        <MovieCardComponent
-          title={this.state.movieA.titulo}
-          image={this.state.movieA.image}
-          year={this.state.movieA.year}
-          duracion={this.state.movieA.duracion}
-          genero={this.state.movieA.genero}
-          sinopsis={this.state.movieA.sinopsis}
-        ></MovieCardComponent>
 
-        <MovieCardComponent
-          title={this.state.movieB.name}
-          image={this.state.movieB.image}
-          year={this.state.movieB.year}
-          duracion={this.state.movieB.duracion}
-          genero={this.state.movieB.genero}
-          sinopsis={this.state.movieB.sinopsis}
-        ></MovieCardComponent>
       </div>
     );
   }
@@ -95,3 +80,7 @@ export default Movies;
 // genero={}
 // sinopsis={}
 // ></MovieCardComponent>
+
+// Daniel: M
+// Fernando: M
+// Sascha: M

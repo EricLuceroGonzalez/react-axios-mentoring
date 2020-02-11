@@ -4,7 +4,6 @@ import {
   CardImg,
   CardBody,
   CardTitle,
-  CardSubtitle,
   CardText,
   Button
 } from "reactstrap";
@@ -21,7 +20,9 @@ class MovieCardComponent extends Component {
   render() {
     return (
       <Card className="col-6">
-        <CardTitle style={titleStyle}>{this.props.title}</CardTitle>
+        <CardTitle style={titleStyle}>
+        {this.props.title}
+        </CardTitle>
         <CardImg
           top
           height='30%'
